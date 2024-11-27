@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react'
 import Message from '../layout/Message'
 import Container from '../layout/Container'
 import LinkButton from '../layout/LinkButton'
-import projectCard from '../Project/projectCard'
+import ProjectCard from '../Project/ProjectCard'
 
-import styles from './projects.module.css'
-import { useState, } from 'react'
+import styles from './Projects.module.css'
 
 function Project () {
     const [projects, setProjects] = useState([])
@@ -41,8 +40,14 @@ function Project () {
         </div>
         {message && <Message type='success' msg={message}/>}
         <Container customClass='start'>
-            <p>projetos...</p>
-
+        {projects.length > 0 && 
+            projects.map((project) => (<ProjectCard  
+            id={project.id}    
+            name={project.name}
+            budget={project.budget}
+            category={project.category}
+            key={project.id}
+            />))}
         </Container>
         </div>
     )

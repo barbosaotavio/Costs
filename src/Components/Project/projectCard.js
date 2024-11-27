@@ -1,12 +1,14 @@
-import styles from './projectCard.module.css'
+import styles from './ProjectCard.module.css'
 
 import { BsPencil,BsFillTrashFill } from 'react-icons/bs'
 
-function projectCard({id, mane, dudgte, category, handleRemove}) {
+function ProjectCard({id, name, budget, category, handleRemove}) {
     return (
-      <p>projetos</p>
-    )
-}
+      <div>
+      
+      </div>
+
+)}
 
 
-export default projectCard
+export default ProjectCard
