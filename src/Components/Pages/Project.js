@@ -4,18 +4,18 @@ import { useState, useEffect } from 'react'
 
 function Project () {
     const{id} = useParams()   
-    const [Project, steProjact] = useState([])
+    const [Project, setProject] = useState([])
 
     useEffect(() => {
 
-        fetch(`http://localholst:5000/projacts/${id}`,{
+        fetch(`http://localhost:5000/projects/${id}`,{
             method: 'GET' ,
             headers: {
                 'content-Type' : 'application/json',
             },
         }).then(resp => resp.json())
           .then ((data) => {
-            steProjact(data)
+            setProject(data)
           })
           .catch(err => console.log)
 
