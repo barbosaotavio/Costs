@@ -1,4 +1,4 @@
-
+import styles from './Project.module.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -35,15 +35,15 @@ function Project () {
     return(
     <>
     {Project.name ? (
-        <div>
+        <div className={styles.projet_details}>
           <Container customClass='column'>
-            <div>
+            <div className={styles.details_container}>
                <h1>Projeto: {Project.name}</h1>
-               <button onClick={toggleProjectForm}>
+               <button className={styles.btn} onClick={toggleProjectForm}>
                 {!showProjectForm ? 'Editar projeto' : 'Fechar'}
                </button>
                {!showProjectForm ? (
-                <div>
+                <div className={styles.project_info}>
                     <p>
                         <span>Categoria:</span> {Project.category.name}
                     </p>
@@ -55,8 +55,8 @@ function Project () {
                     </p>
                 </div>
                ) : (
-                <div>
-                    <p>detalhes do projeto</p>
+                <div className={styles.project_info}>
+                    <p>form</p>
                 </div>
                )}
             </div>
