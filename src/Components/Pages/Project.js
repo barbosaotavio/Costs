@@ -1,6 +1,10 @@
-import styles from './Project.module.css'
+
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
+import Loading from '../layout/Loading'
+import Container from '../layout/Container'
+
 
 function Project () {
     const{id} = useParams()   
@@ -8,21 +12,36 @@ function Project () {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/projects/${id}`,{
-            method: 'GET' ,
-            headers: {
-                'content-Type' : 'application/json',
-            },
-        }).then(resp => resp.json())
-          .then ((data) => {
-            setProject(data)
-          })
-          .catch(err => console.log)
+        setTimeout(()=>{
+            fetch(`http://localhost:5000/projects/${id}`,{
+                method: 'GET' ,
+                headers: {
+                    'content-Type' : 'application/json',
+                },
+            }).then(resp => resp.json())
+              .then ((data) => {
+                setProject(data)
+              })
+              .catch(err => console.log)
+        },300)
 
    }, [id])
 
     return(
-    <p>{Project.name}</p>
+    <>
+    {Project.name ? (
+        <div>
+          <Container customClass='column'>
+            <div>
+               <h1>Projeto: {Project.name}</h1>
+               <button>Editar projeto</button>
+            </div>
+          </Container>
+        </div>
+    ) : (
+        <Loading/>
+    )}
+    </>
     )
 }   
 
