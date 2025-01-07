@@ -13,11 +13,11 @@
     },
     {
       "id": "0088",
-      "name": "otavio",
-      "budget": "633",
+      "name": "Novo projeto",
+      "budget": "458741",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": []

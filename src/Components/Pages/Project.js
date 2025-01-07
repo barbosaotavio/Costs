@@ -4,13 +4,17 @@ import { useState, useEffect } from 'react'
 
 import Loading from '../layout/Loading'
 import Container from '../layout/Container'
+import Message from '../layout/Message'
+import ProjectForm from '../Project/ProjectForm'
+import { BiMessageMinus } from 'react-icons/bi'
 
 
 function Project () {
     const{id} = useParams()   
     const [Project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
-
+    const [message, setMassage] = useState()
+    const [type, setType] = useState()
     useEffect(() => {
 
         setTimeout(()=>{
@@ -28,6 +32,33 @@ function Project () {
 
    }, [id])
 
+   function editPost(Project) {
+    //budget validation
+
+    if (Project.budget < Project.cost) {
+        setMassage('O orçamento não pode ser menor que o custo do projeto!')
+        setType('error')
+        return false
+    }
+
+    fetch(`http://localhost:5000/projects/${Project.id}`,{
+        method: 'PATCH',
+        headers: {
+            'content-Type' : 'application/json'
+        },
+        body: JSON.stringify(Project),
+    })
+    .then(resp => resp.json())
+    .then((data => {
+
+        setProject(data)
+        setShowProjectForm(false)
+        setMassage('Projeto atualizado')
+        setType('success')
+    }))
+    .catch(err => console.log(err))
+   }
+
    function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
    }
@@ -37,6 +68,7 @@ function Project () {
     {Project.name ? (
         <div className={styles.projet_details}>
           <Container customClass='column'>
+            {message && <Message type={type} msg={message}/> }
             <div className={styles.details_container}>
                <h1>Projeto: {Project.name}</h1>
                <button className={styles.btn} onClick={toggleProjectForm}>
@@ -56,7 +88,7 @@ function Project () {
                 </div>
                ) : (
                 <div className={styles.project_info}>
-                    <p>form</p>
+                    <ProjectForm handleSubmit={editPost} btnText='Concluir edição ' projectData={Project}/>
                 </div>
                )}
             </div>
