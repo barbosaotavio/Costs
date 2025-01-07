@@ -9,6 +9,7 @@ import Container from '../layout/Container'
 function Project () {
     const{id} = useParams()   
     const [Project, setProject] = useState([])
+    const [showProjectForm, setShowProjectForm] = useState(false)
 
     useEffect(() => {
 
@@ -27,6 +28,10 @@ function Project () {
 
    }, [id])
 
+   function toggleProjectForm() {
+    setShowProjectForm(!showProjectForm)
+   }
+
     return(
     <>
     {Project.name ? (
@@ -34,7 +39,26 @@ function Project () {
           <Container customClass='column'>
             <div>
                <h1>Projeto: {Project.name}</h1>
-               <button>Editar projeto</button>
+               <button onClick={toggleProjectForm}>
+                {!showProjectForm ? 'Editar projeto' : 'Fechar'}
+               </button>
+               {!showProjectForm ? (
+                <div>
+                    <p>
+                        <span>Categoria:</span> {Project.category.name}
+                    </p>
+                    <p>
+                        <span>Total de Orçamento:</span> R${Project.budget}
+                    </p>
+                    <p>
+                        <span>Total Utilizado:</span> R${Project.cost}
+                    </p>
+                </div>
+               ) : (
+                <div>
+                    <p>detalhes do projeto</p>
+                </div>
+               )}
             </div>
           </Container>
         </div>
