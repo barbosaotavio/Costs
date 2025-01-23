@@ -6,6 +6,7 @@ import Loading from '../layout/Loading'
 import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../Project/ProjectForm'
+import ServiceForm from '../Service/serviceForm'
 import { BiMessageMinus } from 'react-icons/bi'
 
 
@@ -60,6 +61,10 @@ function Project () {
     .catch(err => console.log(err))
    }
 
+   function CreateService() {
+
+   }
+
    function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
    }
@@ -103,7 +108,13 @@ function Project () {
             {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
             </button>
             <div className={styles.project_info}>
-               {showServiceForm && (<div>formulário de serviço</div>)}
+               {showServiceForm && (
+                <ServiceForm
+                handleSubmit={CreateService}
+                btnText='Adicionar serviço'
+                projectData={Project}
+                />
+               )}
             </div>
             </div>
             <h2>Serviços</h2>
