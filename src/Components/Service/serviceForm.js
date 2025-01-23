@@ -5,12 +5,11 @@ import SubmitButton from '../form/SubmitButton'
 import styles from '../Project/ProjectForm.module.css'
 
 function ServiceForm({handleSubmit, btnText, projectData}) {
-    function submit(){
-
-    }
-    function handleChange(e) {
-
-    }
+    
+    const [Service, sertService] = useState({})
+    
+    function submit() {}
+    function handleChange(e) {}
     return (
         <form onSubmit={submit} className={styles.form}>
             <Input
