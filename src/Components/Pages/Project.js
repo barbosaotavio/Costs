@@ -18,7 +18,7 @@ function Project () {
     const [Project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
-    const [message, setMassage] = useState()
+    const [message, setMessage] = useState()
     const [type, setType] = useState()
     useEffect(() => {
 
@@ -39,9 +39,9 @@ function Project () {
 
    function editPost(Project) {
     //budget validation
-        setMassage('')
+        setMessage('')
     if (Project.budget < Project.cost) {
-        setMassage('O orçamento não pode ser menor que o custo do projeto!')
+        setMessage('O orçamento não pode ser menor que o custo do projeto!')
         setType('error')
         return false
     }
@@ -58,7 +58,7 @@ function Project () {
 
         setProject(data)
         setShowProjectForm(false)
-        setMassage('Projeto atualizado')
+        setMessage('Projeto atualizado')
         setType('success')
     }))
     .catch(err => console.log(err))
@@ -76,7 +76,7 @@ function Project () {
 
     //maximum value validation 
     if(newCost > parseFloat(project.budget)) {
-        setMassage('Orçamento ultrapassado, verifique o valor do serviço!')
+        setMessage('Orçamento ultrapassado, verifique o valor do serviço!')
         setType('error')
         project.service.pop()
         return false
