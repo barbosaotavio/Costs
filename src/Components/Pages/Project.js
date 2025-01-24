@@ -61,8 +61,9 @@ function Project () {
     .catch(err => console.log(err))
    }
 
-   function CreateService() {
-
+   function CreateService(project) {
+    const lastService = project.services[project.services.length - 1]
+    lastService.id = uuidv4()
    }
 
    function toggleProjectForm() {
