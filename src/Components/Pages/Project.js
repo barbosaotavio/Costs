@@ -1,3 +1,5 @@
+import { parse, v4 as uuidv4 } from 'uuid'
+
 import styles from './Project.module.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -8,6 +10,7 @@ import Message from '../layout/Message'
 import ProjectForm from '../Project/ProjectForm'
 import ServiceForm from '../Service/serviceForm'
 import { BiMessageMinus } from 'react-icons/bi'
+import { IoPhonePortrait } from 'react-icons/io5'
 
 
 function Project () {
@@ -61,9 +64,24 @@ function Project () {
     .catch(err => console.log(err))
    }
 
-   function CreateService(project) {
-    const lastService = project.services[project.services.length - 1]
+    function CreateService(project) {
+
+    const lastService = project.service[project.service.length - 1]
+
     lastService.id = uuidv4()
+
+    const lastServiceCost = lastService.cost
+
+    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+    //maximum value validation 
+    if(newCost > parseFloat(project.budget)) {
+        setMassage('Orçamento ultrapassado, verifique o valor do serviço!')
+        setType('error')
+        project.service.pop()
+        return false
+    }
+
    }
 
    function toggleProjectForm() {
