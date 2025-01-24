@@ -80,8 +80,9 @@ function Project () {
         setType('error')
         project.service.pop()
         return false
+        
     }
-
+   
    }
 
    function toggleProjectForm() {
