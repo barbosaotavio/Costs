@@ -9,7 +9,19 @@
         "name": "Desenvolvimento"
       },
       "cost": 0,
-      "services": []
+      "services": [
+        {
+          "name": "werwe",
+          "Cost": "4566",
+          "Description": "qweqw"
+        },
+        {
+          "name": "werwe",
+          "Cost": "4566",
+          "Description": "qweqw"
+        }
+      ],
+      "service": []
     },
     {
       "id": "0088",

@@ -64,26 +64,24 @@ function Project () {
     .catch(err => console.log(err))
    }
 
-    function CreateService(project) {
+   function CreateService(project) {
+    const lastService = project.services[project.services.length - 1]
 
-    const lastService = project.service[project.service.length - 1]
-
+    // Generate a unique ID for the service
     lastService.id = uuidv4()
 
-    const lastServiceCost = lastService.cost
+    const lastServiceCost = parseFloat(lastService.cost)
+    const newCost = parseFloat(project.cost) + lastServiceCost
 
-    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
-
-    //maximum value validation 
-    if(newCost > parseFloat(project.budget)) {
-        setMessage('Orçamento ultrapassado, verifique o valor do serviço!')
+    // Check if the new total cost exceeds the budget
+    if (newCost > parseFloat(project.budget)) {
+        setMessage('Orçamento ultrapassado, verifique o valor do serviço')
         setType('error')
-        project.service.pop()
+        project.services.pop()
         return false
-        
-    }
+    } }
    
-   }
+   
 
    function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
