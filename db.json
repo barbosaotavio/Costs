@@ -1,73 +1,46 @@
 {
   "projects": [
     {
-      "id": "3523",
+      "id": "9fb0",
       "name": "projeto 1",
-      "budget": "500",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 400,
-      "services": [
-        {
-          "name": "werwe",
-          "Cost": "4566",
-          "Description": "qweqw"
-        },
-        {
-          "name": "werwe",
-          "Cost": "4566",
-          "Description": "qweqw"
-        },
-        {
-          "name": "werw",
-          "cost": "100",
-          "description": "weqwe",
-          "id": "1788b9dd-4e35-4789-ad10-8d49c4bd6b23"
-        },
-        {
-          "name": "werw",
-          "cost": "100",
-          "description": "weqwe",
-          "id": "1788b9dd-4e35-4789-ad10-8d49c4bd6b23"
-        },
-        {
-          "name": "Novo projeto",
-          "cost": "100",
-          "description": "novo",
-          "id": "54338452-d5ea-434d-8d90-23119ad3d8c1"
-        },
-        {
-          "name": "Novo projeto",
-          "cost": "100",
-          "description": "novo",
-          "id": "54338452-d5ea-434d-8d90-23119ad3d8c1"
-        }
-      ],
-      "service": []
-    },
-    {
-      "id": "0088",
-      "name": "Novo projeto",
-      "budget": "458741",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "ed7e",
-      "name": "ewerw",
-      "budget": "456",
+      "budget": "5000",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": []
+      "cost": 100,
+      "services": [
+        {
+          "name": "teste",
+          "cost": "100",
+          "description": "novo",
+          "id": "a5b06568-81f6-40e8-84f8-c49563240b41"
+        }
+      ]
+    },
+    {
+      "id": "bea9",
+      "name": "otavio",
+      "budget": "50000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 700,
+      "services": [
+        {
+          "name": "contratar ",
+          "cost": "500",
+          "description": "freelancer",
+          "id": "707f0013-b938-402a-80b0-074610c54303"
+        },
+        {
+          "name": "teste",
+          "cost": "200",
+          "description": "asdasda",
+          "id": "15140ad5-17ed-43da-8330-e22dd7381153"
+        }
+      ]
     }
   ],
   "categories": [
