@@ -3,12 +3,12 @@
     {
       "id": "3523",
       "name": "projeto 1",
-      "budget": "5215",
+      "budget": "500",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
+      "cost": 400,
       "services": [
         {
           "name": "werwe",
@@ -19,6 +19,30 @@
           "name": "werwe",
           "Cost": "4566",
           "Description": "qweqw"
+        },
+        {
+          "name": "werw",
+          "cost": "100",
+          "description": "weqwe",
+          "id": "1788b9dd-4e35-4789-ad10-8d49c4bd6b23"
+        },
+        {
+          "name": "werw",
+          "cost": "100",
+          "description": "weqwe",
+          "id": "1788b9dd-4e35-4789-ad10-8d49c4bd6b23"
+        },
+        {
+          "name": "Novo projeto",
+          "cost": "100",
+          "description": "novo",
+          "id": "54338452-d5ea-434d-8d90-23119ad3d8c1"
+        },
+        {
+          "name": "Novo projeto",
+          "cost": "100",
+          "description": "novo",
+          "id": "54338452-d5ea-434d-8d90-23119ad3d8c1"
         }
       ],
       "service": []
