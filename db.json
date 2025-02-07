@@ -1,39 +1,15 @@
 {
   "projects": [
     {
-      "id": "9fb0",
+      "id": "a519",
       "name": "projeto 1",
-      "budget": "5000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "bea9",
-      "name": "otavio",
-      "budget": "50000",
+      "budget": "5500",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 700,
-      "services": [
-        {
-          "name": "contratar ",
-          "cost": "500",
-          "description": "freelancer",
-          "id": "707f0013-b938-402a-80b0-074610c54303"
-        },
-        {
-          "name": "teste",
-          "cost": "200",
-          "description": "asdasda",
-          "id": "15140ad5-17ed-43da-8330-e22dd7381153"
-        }
-      ]
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [
